@@ -1,0 +1,50 @@
+
+form {
+    width: 50%;
+    background-color: whitesmoke;
+    margin: 0 auto;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+form label {
+    display: block;
+    font-size: 1.2em;
+    color: darkslategrey;
+    padding-left: 3px;    
+}
+
+input, select
+{
+    font-size: 1.1em; 
+    color: grey;
+    background-color: white;
+    padding: 10px;
+    font-family: inherit;
+    font-weight: lighter;
+    border: 0px;
+    outline: none;
+    border-radius: 0.3em;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+input:focus { 
+    border:1px solid orange;
+}
+
+input[type=submit] {
+    background-color: limegreen;
+    cursor: pointer;
+    width: 14em;
+    padding: .3em 0;
+    border-radius: 0.7em;
+}
+
+input[type=submit]:hover {
+    background-color: yellow;
+    box-shadow: 2px 2px 2px grey;
+}
