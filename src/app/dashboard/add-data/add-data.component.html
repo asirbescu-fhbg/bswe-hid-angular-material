@@ -9,9 +9,10 @@
     </select>
     <button type="submit">Erfassen</button> -->
 
-    <mat-form-field >
+    <mat-form-field>
         <mat-label>Name</mat-label>
         <input matInput formControlName="name">
+        <mat-error>Bitte geben Sie einen Namen ein!</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -19,16 +20,19 @@
         <input matInput [matDatepicker]="dp" formControlName="birthDate">
         <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
         <mat-datepicker #dp></mat-datepicker>
+        <mat-error>Bitte geben Sie ein Geburtsdatum ein!</mat-error>
     </mat-form-field>
 
     <mat-form-field>
         <mat-label>Bitte Kindergarten auswählen</mat-label>
         <mat-select formControlName="kindergardenId">
-            <mat-option *ngFor="let kindergarden of storeService.kindergardens" value={{kindergarden.id}}>
+            <mat-option disabled>Bitte Kindergarten auswählen</mat-option>
+            <mat-option *ngFor="let kindergarden of storeService.kindergardens" [value]="kindergarden.id">
                 {{kindergarden.name}}, {{kindergarden.address}}</mat-option>
         </mat-select>
+        <mat-error>Bitte wählen Sie einen Kindergarten aus</mat-error>
     </mat-form-field>
 
-    <button mat-flat-button type="submit">Erfassen</button>
+    <button mat-flat-button>Erfassen</button>
 
 </form>
