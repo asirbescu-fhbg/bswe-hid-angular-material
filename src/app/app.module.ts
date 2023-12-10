@@ -9,6 +9,11 @@ import { DataComponent } from './dashboard/data/data.component';
 import { AddDataComponent } from './dashboard/add-data/add-data.component';
 import { HeaderComponent } from './header/header.component';
 import { ButtonComponent } from './dashboard/button/button.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -24,7 +29,12 @@ import { ButtonComponent } from './dashboard/button/button.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatIconModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

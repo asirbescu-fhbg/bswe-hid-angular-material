@@ -1,5 +1,5 @@
 <form [formGroup]="addChildForm" (ngSubmit)="onSubmit()">
-    <h2>Ihr Kind anmelden!</h2>
+    <!-- <h2>Ihr Kind anmelden!</h2>
     <input placeholder="Name" type="input" formControlName="name"><br />
     <input placeholder="Geburtsdatum" type="date" formControlName="birthDate"><br />
     <select formControlName="kindergardenId">
@@ -7,5 +7,23 @@
         <option *ngFor="let kindergarden of storeService.kindergardens" [ngValue]="kindergarden.id">
             {{kindergarden.name}}, {{kindergarden.address}}</option>
     </select>
-    <button type="submit">Erfassen</button>
+    <button type="submit">Erfassen</button> -->
+
+    <mat-form-field>
+        <mat-label>Vorname</mat-label>
+        <input matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Nachname</mat-label>
+        <input matInput>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Geburtstag</mat-label>
+        <input matInput [matDatepicker]="dp" [formControl]="date">
+        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
+        <mat-datepicker #dp color="primary"></mat-datepicker>
+    </mat-form-field>
+
 </form>
