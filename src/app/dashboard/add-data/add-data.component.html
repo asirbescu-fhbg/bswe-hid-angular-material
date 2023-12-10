@@ -1,6 +1,6 @@
-<form [formGroup]="addChildForm" (ngSubmit)="onSubmit()">
-    <!-- <h2>Ihr Kind anmelden!</h2>
-    <input placeholder="Name" type="input" formControlName="name"><br />
+<form [formGroup]="addChildForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)">
+    <h2>Ihr Kind anmelden!</h2>
+    <!-- <input placeholder="Name" type="input" formControlName="name"><br />
     <input placeholder="Geburtsdatum" type="date" formControlName="birthDate"><br />
     <select formControlName="kindergardenId">
         <option value="" disabled>Bitte auswählen</option>

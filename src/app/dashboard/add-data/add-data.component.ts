@@ -1,10 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, Validators, FormGroupDirective, FormControl } from '@angular/forms';
 import { BackendService } from 'src/app/shared/backend.service';
 import { StoreService } from 'src/app/shared/store.service';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
-import { FormControl } from '@angular/forms';
 
 import * as moment from 'moment';
 // import 'moment/locale/de';
@@ -54,10 +53,12 @@ export class AddDataComponent implements OnInit{
     })
   }
 
-  onSubmit() {
+  onSubmit(formDirective: FormGroupDirective): void {
     if(this.addChildForm.valid) {
       console.log(this.addChildForm.value);
       this.backendService.addChildData(this.addChildForm.value, this.currentPage);
+      formDirective.resetForm();
+      this.addChildForm.reset();
     }
   }
 }
