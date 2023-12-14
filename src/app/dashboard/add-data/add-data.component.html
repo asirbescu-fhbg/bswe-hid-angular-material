@@ -1,3 +1,13 @@
+<div #myModal class="registrationSuccess">
+    <div class="alert alert-success" role="alert">
+        Kind erfolgreich angemeldet!
+        <button type="button" class="btn btn-success btn-sm" (click)="closeModal()">
+            X
+        </button>
+    </div>
+
+</div>
+
 <form [formGroup]="addChildForm" #formDirective="ngForm" (ngSubmit)="onSubmit(formDirective)">
     <h2>Ihr Kind anmelden!</h2>
     <!-- <input placeholder="Name" type="input" formControlName="name"><br />
@@ -20,7 +30,7 @@
         <input matInput [matDatepicker]="dp" formControlName="birthDate">
         <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
         <mat-datepicker #dp></mat-datepicker>
-        <mat-error>Bitte geben Sie ein Geburtsdatum ein!</mat-error>
+        <mat-error>Bitte geben Sie ein Geburtsdatum eng <s></s>n!</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -33,7 +43,5 @@
         <mat-error>Bitte wählen Sie einen Kindergarten aus</mat-error>
     </mat-form-field>
 
-    <button mat-flat-button data-bs-toggle="modal" data-bs-target="#exampleModal">Erfassen</button>
-
+    <button mat-flat-button>Erfassen</button>
 </form>
-

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { FormBuilder, Validators, FormGroupDirective, FormControl } from '@angular/forms';
 import { BackendService } from 'src/app/shared/backend.service';
 import { StoreService } from 'src/app/shared/store.service';
@@ -44,9 +44,9 @@ export class AddDataComponent implements OnInit{
   constructor(private formbuilder: FormBuilder, public storeService: StoreService, public backendService: BackendService) {
   }
   public addChildForm: any;
-  public isVisible: boolean = false;
   @Input() currentPage!: number;
   date = new FormControl(moment());
+  @ViewChild('myModal') myModal!: ElementRef;
 
   ngOnInit(): void {
     this.addChildForm = this.formbuilder.group({
@@ -63,9 +63,16 @@ export class AddDataComponent implements OnInit{
       this.backendService.addChildData(this.addChildForm.value, this.currentPage);
       formDirective.resetForm();
       this.addChildForm.reset();
-      this.isVisible = true;
-
+      this.openModal();
     }
+  }
+
+  openModal() {
+    this.myModal.nativeElement.style.display = 'flex';
+  }
+
+  closeModal() {
+    this.myModal.nativeElement.style.display = 'none';
   }
 
 
