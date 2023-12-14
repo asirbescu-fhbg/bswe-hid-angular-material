@@ -1,6 +1,17 @@
+<mat-toolbar>
+    <span>{{ title }}</span>
+    <span class="fillRemainingSpace"></span>
+    <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #appMenu="matMenu">
+        <ng-template matMenuContent>
+            <a mat-menu-item [routerLink]="['/dashboard']">Dashboard</a>
+            <a mat-menu-item [routerLink]="['/about']">About</a>
+        </ng-template>
+    </mat-menu>
+</mat-toolbar>
+
 <div class="flex">
-    <h1>{{ title }}</h1>
-    <img width="500" src={{imagePath}}>&nbsp;&nbsp;
-    <a [routerLink]="['/dashboard']">Dashboard</a>&nbsp;&nbsp;
-    <a [routerLink]="['/about']">About</a>
+    <img src={{imagePath}}>
 </div>

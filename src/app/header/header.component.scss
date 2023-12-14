@@ -1,3 +1,32 @@
 .flex {
     display: flex;
 }
+
+img {
+    width: 500px;
+}
+
+.fillRemainingSpace {
+    flex: 1 1 auto;
+}
+
+a:link, a:visited {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+}
+
+a:hover, a:active, button {
+    color: darkgoldenrod;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 50%;
+}
