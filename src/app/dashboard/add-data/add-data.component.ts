@@ -5,7 +5,9 @@ import { StoreService } from 'src/app/shared/store.service';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 
+
 import * as moment from 'moment';
+// import { stat } from 'fs';
 // import 'moment/locale/de';
 // const moment = _moment;
 // moment.locale('de');
@@ -42,6 +44,7 @@ export class AddDataComponent implements OnInit{
   constructor(private formbuilder: FormBuilder, public storeService: StoreService, public backendService: BackendService) {
   }
   public addChildForm: any;
+  public isVisible: boolean = false;
   @Input() currentPage!: number;
   date = new FormControl(moment());
 
@@ -51,6 +54,7 @@ export class AddDataComponent implements OnInit{
       kindergardenId: ['', Validators.required],
       birthDate: [null, Validators.required]
     })
+
   }
 
   onSubmit(formDirective: FormGroupDirective): void {
@@ -59,6 +63,10 @@ export class AddDataComponent implements OnInit{
       this.backendService.addChildData(this.addChildForm.value, this.currentPage);
       formDirective.resetForm();
       this.addChildForm.reset();
+      this.isVisible = true;
+
     }
   }
+
+
 }

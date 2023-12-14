@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { BackendService } from 'src/app/shared/backend.service';
 import { CHILDREN_PER_PAGE } from 'src/app/shared/constants';
 import { StoreService } from 'src/app/shared/store.service';
+import { PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-data',
@@ -11,9 +12,12 @@ import { StoreService } from 'src/app/shared/store.service';
 export class DataComponent implements OnInit {
 
   constructor(public storeService: StoreService, private backendService: BackendService) {}
+
   @Input() currentPage!: number;
   @Output() selectPageEvent = new EventEmitter<number>();
   public page: number = 0;
+  public pageSize: number = CHILDREN_PER_PAGE;
+  public pageLength!: number;
 
   ngOnInit(): void {
     this.backendService.getChildren(this.currentPage);
@@ -30,19 +34,15 @@ export class DataComponent implements OnInit {
     return age;
   }
 
-  selectPage(i: any) {
-    let currentPage = i;
-    this.selectPageEvent.emit(currentPage)
-    this.backendService.getChildren(currentPage);
+  getChildrenCount() {
+    return this.storeService.childrenTotalCount;
   }
-
-  public returnAllPages() {
-    let res = [];
-    const pageCount = Math.ceil(this.storeService.childrenTotalCount / CHILDREN_PER_PAGE);
-    for (let i = 0; i < pageCount; i++) {
-      res.push(i + 1);
-    }
-    return res;
+  
+  public handlePage(e: any) {
+    this.currentPage = e.pageIndex + 1;
+    this.pageSize = e.pageSize;
+    this.selectPageEvent.emit(this.currentPage)
+    this.backendService.getChildren(this.currentPage);
   }
 
   public cancelRegistration(childId: string) {

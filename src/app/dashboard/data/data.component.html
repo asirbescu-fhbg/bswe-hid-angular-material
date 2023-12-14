@@ -18,9 +18,12 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-12 d-flex justify-content-center">
-            <button [ngClass]="page == currentPage ? 'active' : ''" (click)="selectPage(page)" type="button" *ngFor="let page of returnAllPages()">{{page}}</button>
-        </div>
-    </div>
+    <mat-paginator #paginatorChildren
+                    class="paginatorChildren"
+                    (page)="handlePage($event)"
+                    [length]="getChildrenCount()"
+                    [pageSize]="pageSize"
+                    aria-label="Select page">
+    </mat-paginator>
+
 </div>

@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  public title: string = 'Kindergarten';
+  public title: string = 'Kindergarten-App';
   public imagePath: string = "./../assets/images/kindergarden.jpg";
 
   constructor() { }
