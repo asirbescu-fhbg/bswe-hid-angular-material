@@ -18,6 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     MatSelectModule,
     MatToolbarModule,
     MatMenuModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
