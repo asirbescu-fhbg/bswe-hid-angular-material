@@ -19,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
 import { KindergardenInfoComponent } from './kindergarden-info/kindergarden-info.component';
 
 @NgModule({
@@ -46,7 +47,8 @@ import { KindergardenInfoComponent } from './kindergarden-info/kindergarden-info
     MatToolbarModule,
     MatMenuModule,
     MatPaginatorModule,
-    MatButtonModule
+    MatButtonModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

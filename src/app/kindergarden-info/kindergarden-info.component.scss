@@ -1,0 +1,35 @@
+.catalogue {
+    margin: 30px 10px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.kindergarden-card {
+    max-width: 350px;
+    margin-bottom: 30px;
+}
+
+.header-img {
+    background-size: cover;
+}
+
+#waldorf {
+    background-image: url(../../assets/images/waldorf_logo.jpg);
+}
+
+#karl-schubert {
+    background-image: url(../../assets/images/karl_schubert_logo.png);
+}
+
+.stadt-wien {
+    background-image: url(../../assets/images/stadt_wien_logo.png);
+}
+
+#montessori {
+    background-image: url(../../assets/images/montessori_logo.jpg);
+}
+
+img {
+    margin: 10px 0px;
+}
