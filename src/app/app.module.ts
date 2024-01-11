@@ -19,6 +19,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
+import { KindergardenInfoComponent } from './kindergarden-info/kindergarden-info.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MatButtonModule } from '@angular/material/button';
     AddDataComponent,
     DataComponent,
     HeaderComponent,
-    ButtonComponent
+    ButtonComponent,
+    KindergardenInfoComponent
   ],
   imports: [
     BrowserModule,
