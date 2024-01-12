@@ -25,6 +25,7 @@
     "bootstrap": "^5.3.0",
     "json-server": "^0.17.3",
     "ng2-pdf-viewer": "^10.0.0",
+    "ng2-search-filter": "^0.5.1",
     "popper.js": "^1.16.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

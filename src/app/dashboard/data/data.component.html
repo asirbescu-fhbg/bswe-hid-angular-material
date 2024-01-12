@@ -1,4 +1,12 @@
 <div class="container">
+        <mat-form-field class="filter">
+            <mat-label>Filter Kindergärten</mat-label>
+            <mat-select [formControl]="filterKindergarten">
+                <mat-option>None</mat-option>
+                <mat-option *ngFor="let k of storeService.kindergardens" [value]="k.name">{{k.name}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
     <div class="row justify-content-center align-items-center">
         <p class="col-xl-2 col-lg-3">Name</p>
         <p class="col-xl-2 col-lg-3">Kindergarten</p>
@@ -7,7 +15,8 @@
         <p class="col-xl-1 col-lg-1">Geburtsdatum</p>
         <p class="col-xl-1 col-lg-1"></p>
     </div>
-    <div *ngFor="let child of storeService.children" class="row justify-content-center align-items-center">
+    <div *ngFor="let child of storeService.children | filterKindergardens: filterKindergarten.value" 
+    class="row justify-content-center align-items-center">
         <p class="col-xl-2 col-lg-3">{{child.name}}</p>
         <p class="col-xl-2 col-lg-3">{{child.kindergarden.name}}</p>
         <p class="col-xl-1 col-lg-1">{{child.kindergarden.address}}</p>

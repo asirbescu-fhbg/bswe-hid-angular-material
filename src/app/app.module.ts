@@ -21,6 +21,7 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { KindergardenInfoComponent } from './kindergarden-info/kindergarden-info.component';
+import { FilterKindergardensPipe } from './filter-kindergardens.pipe';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { KindergardenInfoComponent } from './kindergarden-info/kindergarden-info
     DataComponent,
     HeaderComponent,
     ButtonComponent,
-    KindergardenInfoComponent
+    KindergardenInfoComponent,
+    FilterKindergardensPipe
   ],
   imports: [
     BrowserModule,

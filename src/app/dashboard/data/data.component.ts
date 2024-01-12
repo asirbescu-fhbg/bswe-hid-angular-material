@@ -3,6 +3,7 @@ import { BackendService } from 'src/app/shared/backend.service';
 import { CHILDREN_PER_PAGE } from 'src/app/shared/constants';
 import { StoreService } from 'src/app/shared/store.service';
 import { PageEvent } from '@angular/material/paginator';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-data',
@@ -18,6 +19,7 @@ export class DataComponent implements OnInit {
   public page: number = 0;
   public pageSize: number = CHILDREN_PER_PAGE;
   public pageLength!: number;
+  public filterKindergarten = new FormControl();
 
   ngOnInit(): void {
     this.backendService.getChildren(this.currentPage);
