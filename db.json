@@ -4,12 +4,14 @@
       "id": "_iL775j",
       "name": "Nicole Fitsch 1",
       "birthDate": "2021-07-04",
+      "registrationDate": "2024-01-12",
       "kindergardenId": 1
     },
     {
       "id": "_ij700m",
       "name": "Melanie Hollunder 2",
       "birthDate": "2020-07-04",
+      "registrationDate": "2024-01-11",
       "kindergardenId": 3
     },
     {
@@ -22,54 +24,63 @@
       "id": "_iL790m",
       "name": "Emily Nilson 4",
       "birthDate": "2019-01-04",
+      "registrationDate": "2024-01-10",
       "kindergardenId": 2
     },
     {
       "id": "_iL790m",
       "name": "Tom Reiner 5",
       "birthDate": "2019-01-04",
+      "registrationDate": "2024-01-12",
       "kindergardenId": 2
     },
     {
       "id": "_iL790m",
       "name": "Michael Mittner 6",
       "birthDate": "2019-01-04",
+      "registrationDate": "2024-01-11",
       "kindergardenId": 2
     },
     {
       "id": "_iL790m",
       "name": "Nikolaus Polarius 7",
       "birthDate": "2019-01-04",
+      "registrationDate": "2024-01-10",
       "kindergardenId": 2
     },
     {
       "name": "Paulus Fensterl 8",
       "kindergardenId": 2,
       "birthDate": "2023-09-28",
+      "registrationDate": "2024-01-09",
       "id": "9py_fwi"
     },
     {
       "name": "Heidi aus den Bergen 9",
       "kindergardenId": 2,
       "birthDate": "2023-10-05",
+      "registrationDate": "2024-01-08",
       "id": "hOHEFCv"
     },
     {
       "name": "Traude Widmann 10",
       "kindergardenId": 2,
       "birthDate": "2023-10-05",
+      "registrationDate": "2024-01-12",
       "id": "cu0_2Ad"
     },
     {
       "name": "Heiner Kühlschrank 11",
       "kindergardenId": 2,
       "birthDate": "2023-10-26",
+      "registrationDate": "2024-01-01",
       "id": "ip57WMS"
     },
     {
       "name": "Nicole Witz 12",
       "kindergardenId": 3,
       "birthDate": "2023-10-13",
+      "registrationDate": "2024-01-01",
       "id": "JmbNaBH"
     }
   ],
