@@ -22,6 +22,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { KindergardenInfoComponent } from './kindergarden-info/kindergarden-info.component';
 import { FilterKindergardensPipe } from './filter-kindergardens.pipe';
+import { MatSortModule } from '@angular/material/sort';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { FilterKindergardensPipe } from './filter-kindergardens.pipe';
     MatMenuModule,
     MatPaginatorModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,13 +7,13 @@
             </mat-select>
         </mat-form-field>
 
-    <div class="row justify-content-center align-items-center">
-        <p class="col-xl-2 col-lg-3">Name</p>
-        <p class="col-xl-2 col-lg-3">Kindergarten</p>
+    <div class="row justify-content-center align-items-center" matSort (matSortChange)="sortData($event)">
+        <p class="col-xl-2 col-lg-3" mat-sort-header="name">Name</p>
+        <p class="col-xl-2 col-lg-3" mat-sort-header="kindergartenName">Kindergarten</p>
         <p class="col-xl-2 col-lg-2">Adresse</p>
         <p class="col-xl-1 col-lg-1">Alter</p>
         <p class="col-xl-2 col-lg-2">Geburtsdatum</p>
-        <p class="col-xl-2 col-lg-2">Anmeldedatum</p>
+        <p class="col-xl-2 col-lg-2" mat-sort-header="anmeldedatum">Anmeldedatum</p>
         <p class="col-xl-1 col-lg-1"></p>
     </div>
     <div *ngFor="let child of storeService.children | filterKindergardens: filterKindergarten.value" 

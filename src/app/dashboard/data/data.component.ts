@@ -4,6 +4,7 @@ import { CHILDREN_PER_PAGE } from 'src/app/shared/constants';
 import { StoreService } from 'src/app/shared/store.service';
 import { PageEvent } from '@angular/material/paginator';
 import { FormControl } from '@angular/forms';
+import { Sort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-data',
@@ -20,6 +21,7 @@ export class DataComponent implements OnInit {
   public pageSize: number = CHILDREN_PER_PAGE;
   public pageLength!: number;
   public filterKindergarten = new FormControl();
+  public sortedData = this.storeService.children;
 
   ngOnInit(): void {
     this.backendService.getChildren(this.currentPage);
@@ -50,6 +52,35 @@ export class DataComponent implements OnInit {
   public cancelRegistration(childId: string) {
     this.backendService.deleteChildData(childId, this.currentPage);
   }
+
+  public sortData(sort: Sort) {
+    const data = this.storeService.children;
+    console.log(sort.active + " " + sort.direction)
+    if (!sort.active || sort.direction === '') {
+      this.sortedData = data;
+      return;
+    }
+
+    this.sortedData = data.sort((a, b) => {
+      const isAsc = sort.direction === 'asc';
+      switch (sort.active) {
+        case 'name':
+          return this.compare(a.name, b.name, isAsc);
+        case 'kindergartenName':
+          return this.compare(a.kindergarden.name, b.kindergarden.name, isAsc);
+        case 'anmeldedatum':
+          return this.compare(a.registrationDate, b.registrationDate, isAsc);
+        default:
+          return 0;
+      }
+    })
+
+  }
+
+  private compare(a: string, b: string, isAsc: boolean) {
+    return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+  }
+
 }
 
 
