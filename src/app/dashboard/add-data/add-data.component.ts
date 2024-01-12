@@ -52,8 +52,10 @@ export class AddDataComponent implements OnInit{
     this.addChildForm = this.formbuilder.group({
       name: ['', [Validators.required]],
       kindergardenId: ['', Validators.required],
-      birthDate: [null, Validators.required]
+      birthDate: [null, Validators.required],
+      registrationDate: [null, Validators.required]
     })
+
 
   }
 

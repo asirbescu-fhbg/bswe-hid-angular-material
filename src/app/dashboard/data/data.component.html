@@ -10,18 +10,20 @@
     <div class="row justify-content-center align-items-center">
         <p class="col-xl-2 col-lg-3">Name</p>
         <p class="col-xl-2 col-lg-3">Kindergarten</p>
-        <p class="col-xl-1 col-lg-1">Adresse</p>
+        <p class="col-xl-2 col-lg-2">Adresse</p>
         <p class="col-xl-1 col-lg-1">Alter</p>
-        <p class="col-xl-1 col-lg-1">Geburtsdatum</p>
+        <p class="col-xl-2 col-lg-2">Geburtsdatum</p>
+        <p class="col-xl-2 col-lg-2">Anmeldedatum</p>
         <p class="col-xl-1 col-lg-1"></p>
     </div>
     <div *ngFor="let child of storeService.children | filterKindergardens: filterKindergarten.value" 
     class="row justify-content-center align-items-center">
         <p class="col-xl-2 col-lg-3">{{child.name}}</p>
         <p class="col-xl-2 col-lg-3">{{child.kindergarden.name}}</p>
-        <p class="col-xl-1 col-lg-1">{{child.kindergarden.address}}</p>
+        <p class="col-xl-2 col-lg-2">{{child.kindergarden.address}}</p>
         <p class="col-xl-1 col-lg-1">{{getAge(child.birthDate)}}</p>
-        <p class="col-xl-1 col-lg-1">{{child.birthDate | date:'longDate'}}</p>
+        <p class="col-xl-2 col-lg-2">{{child.birthDate | date:'longDate'}}</p>
+        <p class="col-xl-2 col-lg-2">{{child.registrationDate | date:'longDate'}}</p>
         <div class="col-xl-1 col-lg-1">
             <button (click)="cancelRegistration(child.id)">Kind abmelden</button>
         </div>

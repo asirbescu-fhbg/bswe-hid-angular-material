@@ -27,10 +27,10 @@
 
     <mat-form-field>
         <mat-label>Geburtstag</mat-label>
-        <input matInput [matDatepicker]="dp" formControlName="birthDate">
-        <mat-datepicker-toggle matIconSuffix [for]="dp"></mat-datepicker-toggle>
-        <mat-datepicker #dp></mat-datepicker>
-        <mat-error>Bitte geben Sie ein Geburtsdatum eng <s></s>n!</mat-error>
+        <input matInput [matDatepicker]="dpBD" formControlName="birthDate">
+        <mat-datepicker-toggle matIconSuffix [for]="dpBD"></mat-datepicker-toggle>
+        <mat-datepicker #dpBD></mat-datepicker>
+        <mat-error>Bitte geben Sie ein Geburtsdatum ein!</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -41,6 +41,14 @@
                 {{kindergarden.name}}, {{kindergarden.address}}</mat-option>
         </mat-select>
         <mat-error>Bitte wählen Sie einen Kindergarten aus</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Anmeldedatum</mat-label>
+        <input matInput [matDatepicker]="dpRD" formControlName="registrationDate">
+        <mat-datepicker-toggle matIconSuffix [for]="dpRD"></mat-datepicker-toggle>
+        <mat-datepicker #dpRD></mat-datepicker>
+        <mat-error>Bitte geben Sie ein Anmeldedatum ein!</mat-error>
     </mat-form-field>
 
     <button mat-button>Erfassen</button>
