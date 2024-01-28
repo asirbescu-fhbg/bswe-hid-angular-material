@@ -84,7 +84,9 @@ export class DataComponent implements OnInit {
   }
 
   public openDialog(childId: string) {
-    const dialogRef = this.dialog.open(DialogComponent);
+    const dialogRef = this.dialog.open(DialogComponent, {
+      data: { header: 'Kind abmelden', text: 'Wollen Sie das Kind wirklich abmelden?'}
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result == true) {

@@ -1,5 +1,5 @@
-<h3 mat-dialog-title>Kind abmelden</h3>
-<div mat-dialog-content>Wollen Sie das Kind wirklich abmelden?</div>
+<h3 mat-dialog-title>{{data.header}}</h3>
+<div mat-dialog-content>{{data.text}}</div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">Nein</button>
     <button mat-button (click)="onYesClick()" cdkFocusInitial>Ja</button>
