@@ -4,6 +4,8 @@ import { BackendService } from 'src/app/shared/backend.service';
 import { StoreService } from 'src/app/shared/store.service';
 import { MomentDateAdapter, MAT_MOMENT_DATE_ADAPTER_OPTIONS } from '@angular/material-moment-adapter';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from 'src/app/dialog/dialog.component';
 
 
 import * as moment from 'moment';
@@ -41,7 +43,7 @@ export const MY_BIRTHDAY_FORMAT = {
 })
 export class AddDataComponent implements OnInit{
 
-  constructor(private formbuilder: FormBuilder, public storeService: StoreService, public backendService: BackendService) {
+  constructor(private formbuilder: FormBuilder, public storeService: StoreService, public backendService: BackendService, public dialog: MatDialog) {
   }
   public addChildForm: any;
   @Input() currentPage!: number;
@@ -61,11 +63,20 @@ export class AddDataComponent implements OnInit{
 
   onSubmit(formDirective: FormGroupDirective): void {
     if(this.addChildForm.valid) {
-      console.log(this.addChildForm.value);
-      this.backendService.addChildData(this.addChildForm.value, this.currentPage);
-      formDirective.resetForm();
-      this.addChildForm.reset();
-      this.openModal();
+
+      const dialogRef = this.dialog.open(DialogComponent, {
+        data: { header: 'Kind anmelden', text: 'Stimmen die Daten des anzumeldenden Kindes?'}
+      });
+  
+      dialogRef.afterClosed().subscribe(result => {
+        if (result) {
+          console.log(this.addChildForm.value);
+          this.backendService.addChildData(this.addChildForm.value, this.currentPage);
+          formDirective.resetForm();
+          this.addChildForm.reset();
+          this.openModal();
+        }
+      });
     }
   }
 
@@ -76,6 +87,5 @@ export class AddDataComponent implements OnInit{
   closeModal() {
     this.myModal.nativeElement.style.display = 'none';
   }
-
 
 }
