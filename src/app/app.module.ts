@@ -24,6 +24,9 @@ import { MatCardModule } from '@angular/material/card';
 import { KindergardenInfoComponent } from './kindergarden-info/kindergarden-info.component';
 import { FilterKindergardensPipe } from './filter-kindergardens.pipe';
 import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+import { DialogComponent } from './dialog/dialog.component';
+
 
 
 @NgModule({
@@ -36,7 +39,8 @@ import { MatSortModule } from '@angular/material/sort';
     ButtonComponent,
     AboutPageComponent,
     KindergardenInfoComponent,
-    FilterKindergardensPipe
+    FilterKindergardensPipe,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +59,8 @@ import { MatSortModule } from '@angular/material/sort';
     MatPaginatorModule,
     MatButtonModule,
     MatCardModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

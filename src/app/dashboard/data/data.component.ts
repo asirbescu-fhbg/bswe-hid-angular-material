@@ -5,6 +5,8 @@ import { StoreService } from 'src/app/shared/store.service';
 import { PageEvent } from '@angular/material/paginator';
 import { FormControl } from '@angular/forms';
 import { Sort } from '@angular/material/sort';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from 'src/app/dialog/dialog.component';
 
 @Component({
   selector: 'app-data',
@@ -13,7 +15,7 @@ import { Sort } from '@angular/material/sort';
 })
 export class DataComponent implements OnInit {
 
-  constructor(public storeService: StoreService, private backendService: BackendService) {}
+  constructor(public storeService: StoreService, private backendService: BackendService, public dialog: MatDialog) {}
 
   @Input() currentPage!: number;
   @Output() selectPageEvent = new EventEmitter<number>();
@@ -79,6 +81,16 @@ export class DataComponent implements OnInit {
 
   private compare(a: string, b: string, isAsc: boolean) {
     return (a < b ? -1 : 1) * (isAsc ? 1 : -1);
+  }
+
+  public openDialog(childId: string) {
+    const dialogRef = this.dialog.open(DialogComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result == true) {
+        this.cancelRegistration(childId);
+      }
+    });
   }
 
 }
